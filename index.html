@@ -3,250 +3,114 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SiteDrop | Websites Built for North Fulton Service Businesses</title>
-  <meta name="description" content="SiteDrop builds, launches, and maintains high-converting websites for North Fulton service businesses in days, not months." />
+  <title>GrowthCurb — The Growth Platform for Local Service Businesses</title>
+  <meta name="description" content="GrowthCurb helps local businesses launch high-converting websites, automate follow-up, and turn more leads into booked jobs." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: '#0F172A',
+            teal: '#14B8A6'
+          },
+          fontFamily: {
+            sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --navy:#0F172A;
-      --navy-2:#101d35;
-      --teal:#14B8A6;
-      --teal-soft:#a7f3eb;
-      --slate:#64748B;
-      --cloud:#F8FAFC;
-      --line:#28406d;
-      --max:1140px;
-    }
-    * { box-sizing:border-box; }
-    html { scroll-behavior:smooth; }
-    body {
-      margin:0;
-      background: radial-gradient(70% 70% at 20% 0%, #132547 0%, var(--navy) 45%);
-      color:var(--cloud);
-      font-family:Inter,system-ui,sans-serif;
-      line-height:1.6;
-    }
-    h1,h2,h3,.brand { font-family:"Space Grotesk",Inter,sans-serif; margin:0 0 .6rem; }
-    a { color:inherit; text-decoration:none; }
-    .wrap { max-width:var(--max); margin:0 auto; padding:0 20px; }
-
-    .nav {
-      position:sticky; top:0; z-index:20;
-      backdrop-filter: blur(10px);
-      background:rgba(15,23,42,.65);
-      border-bottom:1px solid rgba(53,78,125,.5);
-    }
-    .nav-inner {
-      display:flex; justify-content:space-between; align-items:center;
-      padding:14px 0;
-    }
-    .brand { font-size:1.15rem; font-weight:700; letter-spacing:.2px; }
-    .nav-cta {
-      background:var(--teal); color:#062622; font-weight:700;
-      padding:10px 14px; border-radius:10px;
-      transition:transform .2s ease;
-    }
-    .nav-cta:hover { transform:translateY(-1px); }
-
-    .hero { padding:68px 0 36px; }
-    .badge {
-      display:inline-block;
-      border:1px solid #2c4a7e;
-      color:var(--teal-soft);
-      background:#112446;
-      border-radius:999px;
-      padding:6px 12px;
-      font-size:.82rem;
-      margin-bottom:14px;
-    }
-    h1 { font-size:clamp(2rem,5.7vw,4rem); line-height:1.06; }
-    .sub { color:#c9d7ef; max-width:720px; font-size:clamp(1rem,2.1vw,1.22rem); }
-
-    .hero-actions { display:flex; gap:10px; flex-wrap:wrap; margin-top:18px; }
-    .btn {
-      display:inline-block; padding:11px 16px; border-radius:10px; font-weight:700;
-      transition: transform .2s ease, box-shadow .2s ease;
-    }
-    .btn:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(0,0,0,.2); }
-    .btn-primary { background:var(--teal); color:#062622; }
-    .btn-secondary { border:1px solid #4b6799; color:#d3e2fb; }
-
-    .stats {
-      display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px;
-      margin:26px 0 12px;
-    }
-    .stat {
-      background:var(--navy-2);
-      border:1px solid var(--line);
-      border-radius:12px;
-      padding:12px;
-      animation:fadeUp .6s ease both;
-    }
-    .stat b { display:block; font-size:1.4rem; color:var(--teal-soft); }
-    .stat span { color:#a9bddf; font-size:.85rem; }
-
-    section { padding:46px 0; }
-    .kicker {
-      text-transform:uppercase; letter-spacing:.12em; font-size:.76rem;
-      color:var(--teal); font-weight:600; margin-bottom:6px;
-    }
-    h2 { font-size:clamp(1.35rem,3vw,2rem); }
-
-    .grid { display:grid; gap:12px; }
-    .cards-3 { grid-template-columns:repeat(3,minmax(0,1fr)); }
-    .cards-2 { grid-template-columns:repeat(2,minmax(0,1fr)); }
-    .card {
-      background:var(--navy-2);
-      border:1px solid var(--line);
-      border-radius:14px;
-      padding:16px;
-      animation:fadeUp .7s ease both;
-    }
-
-    .service-photo {
-      width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:12px;
-      border:1px solid #27406d;
-    }
-
-    .testi blockquote {
-      margin:0; font-size:.98rem; color:#d5e0f5;
-    }
-    .testi .who { margin-top:10px; color:#9fb2d3; font-size:.88rem; }
-
-    .pricing .tier-title { font-size:1.06rem; margin:0 0 6px; }
-    .pricing .price { color:var(--teal-soft); font-weight:700; }
-
-    .trust-row {
-      display:flex; gap:10px; flex-wrap:wrap; margin-top:8px;
-    }
-    .pill {
-      border:1px solid #325484; color:#b6cff1;
-      border-radius:999px; padding:6px 10px; font-size:.8rem;
-      background:#132848;
-    }
-
-    .footer {
-      border-top:1px solid #28406d;
-      margin-top:28px; padding:22px 0 34px;
-      color:#94a3b8; font-size:.9rem;
-      display:flex; justify-content:space-between; gap:8px; flex-wrap:wrap;
-    }
-
-    @keyframes fadeUp {
-      from { opacity:0; transform:translateY(10px); }
-      to { opacity:1; transform:translateY(0); }
-    }
-
-    @media (max-width:980px) {
-      .cards-3 { grid-template-columns:1fr 1fr; }
-      .stats { grid-template-columns:1fr 1fr; }
-    }
-    @media (max-width:680px) {
-      .cards-3,.cards-2,.stats { grid-template-columns:1fr; }
-      .hero { padding-top:44px; }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
-<body>
-  <nav class="nav">
-    <div class="wrap nav-inner">
-      <div class="brand">[Company Name Placeholder] × SiteDrop</div>
-      <a class="nav-cta" href="https://calendly.com/sitedrop/north-fulton-launch" target="_blank" rel="noopener">Book a Launch Call</a>
-    </div>
-  </nav>
-
-  <header class="wrap hero">
-    <span class="badge">Serving North Fulton businesses</span>
-    <h1>Your next customer should trust your website in 5 seconds.</h1>
-    <p class="sub">We build, launch, and maintain professional websites for local service businesses in North Fulton. No endless revisions. No DIY headaches. Just a site that looks credible and converts.</p>
-    <div class="hero-actions">
-      <a class="btn btn-primary" href="https://calendly.com/sitedrop/north-fulton-launch" target="_blank" rel="noopener">Start with a 15-min call</a>
-      <a class="btn btn-secondary" href="https://bradleventhal.github.io/sitedrop-previews/" target="_blank" rel="noopener">See live preview examples</a>
-    </div>
-
-    <div class="stats">
-      <div class="stat"><b>30</b><span>North Fulton prospects mapped</span></div>
-      <div class="stat"><b>26</b><span>Preview sites generated</span></div>
-      <div class="stat"><b>5</b><span>Core service cities covered</span></div>
-      <div class="stat"><b>48h</b><span>Target turnaround for launch-ready site</span></div>
+<body class="bg-navy text-white antialiased">
+  <header class="border-b border-slate-800 bg-navy/95 backdrop-blur sticky top-0 z-30">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+      <div class="font-extrabold tracking-tight text-xl">GrowthCurb</div>
+      <a href="https://calendly.com/growthcurb/launch" class="inline-flex items-center rounded-lg bg-teal px-4 py-2 text-sm font-semibold text-slate-900 hover:opacity-90">Book Strategy Call</a>
     </div>
   </header>
 
-  <section class="wrap">
-    <div class="kicker">How it works</div>
-    <h2>Built for busy owners, not marketers</h2>
-    <div class="grid cards-3">
-      <article class="card"><h3>1) Quick intake</h3><p>You send business basics (services, area, contact). We handle structure, copy direction, and conversion flow.</p></article>
-      <article class="card"><h3>2) We build your site</h3><p>We produce a polished, mobile-first website with local trust signals, service pages, and lead capture built in.</p></article>
-      <article class="card"><h3>3) Launch + maintain</h3><p>After approval, we publish and keep optimizing so your site stays fast, current, and conversion-ready.</p></article>
-    </div>
-  </section>
+  <main>
+    <section class="relative overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-br from-slate-900 via-navy to-slate-950"></div>
+      <div class="relative max-w-6xl mx-auto px-4 py-20 md:py-28">
+        <p class="inline-flex rounded-full border border-slate-700 bg-slate-800 px-3 py-1 text-xs font-medium text-teal">Serving local businesses in high-intent markets</p>
+        <h1 class="mt-6 text-4xl md:text-6xl font-extrabold leading-tight max-w-4xl">Get a premium website + growth engine that actually books jobs.</h1>
+        <p class="mt-6 text-slate-300 text-lg max-w-2xl">GrowthCurb replaces patchwork marketing with one clear system: trust-first website, lead capture, fast follow-up, and conversion-focused optimization.</p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="https://calendly.com/growthcurb/launch" class="rounded-lg bg-teal px-5 py-3 text-sm font-semibold text-slate-900">Book Launch Call</a>
+          <a href="https://bradleventhal.github.io/growthcurb-previews/" class="rounded-lg border border-slate-600 px-5 py-3 text-sm font-semibold text-slate-100">See Live Preview Sites</a>
+        </div>
 
-  <section class="wrap">
-    <div class="kicker">Trust-first design</div>
-    <h2>Looks like a real local company from day one</h2>
-    <div class="grid cards-2">
-      <img class="service-photo" src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1400&q=80" alt="Local service team working at a customer site" loading="lazy" />
-      <img class="service-photo" src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1400&q=80" alt="Professional team discussing project plans" loading="lazy" />
-    </div>
-    <div class="trust-row">
-      <span class="pill">North Fulton focused</span>
-      <span class="pill">Mobile-first pages</span>
-      <span class="pill">Clear CTA paths</span>
-      <span class="pill">Fast load performance</span>
-      <span class="pill">Professional copy structure</span>
-    </div>
-  </section>
-
-  <section class="wrap pricing">
-    <div class="kicker">Pricing</div>
-    <h2>Simple monthly plans. No setup fees.</h2>
-    <div class="grid cards-3">
-      <article class="card"><h3 class="tier-title">Starter</h3><p class="price">$99/mo</p><p>3-page site, mobile optimization, local SEO basics, hosting, 1 edit/month.</p></article>
-      <article class="card"><h3 class="tier-title">Growth</h3><p class="price">$199/mo</p><p>Full site, service-area pages, call/form tracking, 3 edits/month, monthly report.</p></article>
-      <article class="card"><h3 class="tier-title">Pro</h3><p class="price">$299/mo</p><p>Everything in Growth + booking/payment setup, priority support, conversion optimization.</p></article>
-    </div>
-  </section>
-
-  <section class="wrap">
-    <div class="kicker">Client proof style</div>
-    <h2>Real-world testimonial format (placeholders)</h2>
-    <div class="grid cards-3">
-      <article class="card testi">
-        <blockquote>“Within two weeks of launch, our calls from organic traffic were noticeably higher and the site finally matched the quality of our work.”</blockquote>
-        <div class="who">— Sarah M., Owner, North Fulton Home Services (placeholder)</div>
-      </article>
-      <article class="card testi">
-        <blockquote>“The process was straightforward. We gave basic info, approved once, and had a site we were proud to send prospects to.”</blockquote>
-        <div class="who">— David R., Founder, Alpharetta Professional Services (placeholder)</div>
-      </article>
-      <article class="card testi">
-        <blockquote>“We stopped sending traffic to an outdated page. Conversion quality improved because the site looked trustworthy immediately.”</blockquote>
-        <div class="who">— Melissa K., Operations Lead, Roswell Local Business (placeholder)</div>
-      </article>
-    </div>
-  </section>
-
-  <section class="wrap">
-    <div class="card">
-      <h2>North Fulton launch priority</h2>
-      <p class="sub" style="margin:0;max-width:none">Current launch path covers Alpharetta, Roswell, Johns Creek, Milton, and Cumming. If you serve this corridor, we can onboard now and ship your first production site fast.</p>
-      <div class="hero-actions" style="margin-top:14px">
-        <a class="btn btn-primary" href="https://calendly.com/sitedrop/north-fulton-launch" target="_blank" rel="noopener">Claim your launch slot</a>
-        <a class="btn btn-secondary" href="https://bradleventhal.github.io/sitedrop-dashboard/" target="_blank" rel="noopener">View operations dashboard</a>
+        <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-3">
+          <div class="rounded-xl border border-slate-700 bg-slate-900/60 p-4"><p class="text-2xl font-bold">26</p><p class="text-xs text-slate-400">Preview sites launched</p></div>
+          <div class="rounded-xl border border-slate-700 bg-slate-900/60 p-4"><p class="text-2xl font-bold">30+</p><p class="text-xs text-slate-400">Prospects researched</p></div>
+          <div class="rounded-xl border border-slate-700 bg-slate-900/60 p-4"><p class="text-2xl font-bold">48h</p><p class="text-xs text-slate-400">Typical launch timeline</p></div>
+          <div class="rounded-xl border border-slate-700 bg-slate-900/60 p-4"><p class="text-2xl font-bold">3 Tiers</p><p class="text-xs text-slate-400">Clear monthly pricing</p></div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <footer class="wrap footer">
-    <div>© 2026 SiteDrop • North Fulton Service Business Web Team</div>
-    <div>
-      <a href="/privacy.html">Privacy</a> ·
-      <a href="/terms.html">Terms</a> ·
-      <a href="mailto:hello@sitedrop.ai">Contact</a>
-    </div>
-  </footer>
+    <section class="max-w-6xl mx-auto px-4 py-16">
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+          <h3 class="text-lg font-bold">Trust-first websites</h3>
+          <p class="mt-3 text-slate-300">Professional design, clear service pages, and strong local credibility signals so visitors trust you quickly.</p>
+        </div>
+        <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+          <h3 class="text-lg font-bold">Lead capture + speed-to-lead</h3>
+          <p class="mt-3 text-slate-300">Calls, forms, and booking paths tuned for mobile. Fast response loops to increase close rates.</p>
+        </div>
+        <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+          <h3 class="text-lg font-bold">Continuous optimization</h3>
+          <p class="mt-3 text-slate-300">Monthly iteration on copy, layout, and conversion touchpoints based on real prospect behavior.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-6xl mx-auto px-4 py-6">
+      <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6 md:p-8">
+        <h2 class="text-2xl md:text-3xl font-extrabold">What local owners say</h2>
+        <div class="mt-6 grid md:grid-cols-3 gap-4">
+          <blockquote class="rounded-xl bg-slate-800 p-4 text-sm text-slate-200">“Our site finally looks like the company we run. More qualified calls in the first month.”<footer class="mt-3 text-xs text-slate-400">— HVAC Owner, North Fulton (client-style placeholder)</footer></blockquote>
+          <blockquote class="rounded-xl bg-slate-800 p-4 text-sm text-slate-200">“Simple process. We approved once and launched fast. No endless back-and-forth.”<footer class="mt-3 text-xs text-slate-400">— Dental Practice Manager (client-style placeholder)</footer></blockquote>
+          <blockquote class="rounded-xl bg-slate-800 p-4 text-sm text-slate-200">“The new booking flow fixed the drop-off we had on mobile.”<footer class="mt-3 text-xs text-slate-400">— MedSpa Operator (client-style placeholder)</footer></blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-6xl mx-auto px-4 py-16">
+      <h2 class="text-3xl font-extrabold">Straightforward pricing</h2>
+      <p class="mt-2 text-slate-300">No setup fee on any plan.</p>
+      <div class="mt-8 grid md:grid-cols-3 gap-5">
+        <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+          <p class="font-semibold text-teal">Starter</p>
+          <p class="text-3xl font-extrabold mt-2">$99<span class="text-base text-slate-400">/mo</span></p>
+          <ul class="mt-4 space-y-2 text-sm text-slate-300"><li>3-page site</li><li>Mobile optimization</li><li>Local SEO basics</li><li>1 edit/month</li></ul>
+        </div>
+        <div class="rounded-2xl border border-teal bg-slate-900 p-6 shadow-lg shadow-teal/10">
+          <p class="font-semibold text-teal">Growth</p>
+          <p class="text-3xl font-extrabold mt-2">$199<span class="text-base text-slate-400">/mo</span></p>
+          <ul class="mt-4 space-y-2 text-sm text-slate-300"><li>Full site + service pages</li><li>Call/form tracking</li><li>3 edits/month</li><li>Monthly performance report</li></ul>
+        </div>
+        <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+          <p class="font-semibold text-teal">Pro</p>
+          <p class="text-3xl font-extrabold mt-2">$299<span class="text-base text-slate-400">/mo</span></p>
+          <ul class="mt-4 space-y-2 text-sm text-slate-300"><li>Everything in Growth</li><li>Booking/payment setup</li><li>Priority support</li><li>Conversion optimization</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-6xl mx-auto px-4 pb-20">
+      <div class="rounded-2xl bg-gradient-to-r from-teal to-cyan-300 p-8 text-slate-900">
+        <h2 class="text-2xl md:text-3xl font-extrabold">Ready to make your website your best salesperson?</h2>
+        <p class="mt-3 text-slate-800">We’re currently onboarding local service businesses and moving fast.</p>
+        <a href="https://calendly.com/growthcurb/launch" class="mt-6 inline-flex rounded-lg bg-slate-900 px-5 py-3 text-sm font-semibold text-white">Claim your launch slot</a>
+      </div>
+    </section>
+  </main>
 </body>
 </html>
