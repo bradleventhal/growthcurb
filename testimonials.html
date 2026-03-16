@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GrowthCurb Testimonials</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--navy:#0f172a;--teal:#14b8a6;--slate:#64748b;--white:#f8fafc}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,sans-serif;background:var(--white);color:var(--navy)}
+    .hero{background:linear-gradient(130deg,#0f172a,#1e293b);color:#f8fafc;padding:56px 0}
+    .wrap{max-width:760px;margin:auto;padding:0 20px}
+    h1,h2{font-family:'Space Grotesk',sans-serif;margin:.2rem 0}
+    .card{margin-top:-28px;background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:20px;box-shadow:0 10px 24px rgba(15,23,42,.08)}
+    label{display:block;font-weight:600;margin:14px 0 6px}
+    input,textarea,select{width:100%;padding:12px;border:1px solid #cbd5e1;border-radius:10px;font:inherit}
+    textarea{min-height:140px;resize:vertical}
+    .hint{font-size:13px;color:var(--slate)}
+    button{margin-top:16px;background:var(--teal);color:#053331;border:0;padding:12px 16px;border-radius:10px;font-weight:700;cursor:pointer}
+    .note{margin-top:14px;font-size:13px;color:#475569}
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <h1>Share Your Experience with GrowthCurb</h1>
+      <p>Thank you for trusting us with your website. Your testimonial helps other business owners make confident decisions.</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="card">
+      <h2>Client Testimonial Form</h2>
+      <p class="hint">Please fill out all fields below.</p>
+
+      <form id="testimonial-form">
+        <label for="name">Your Name</label>
+        <input id="name" name="name" type="text" placeholder="e.g., Sarah Johnson" required>
+
+        <label for="business">Business Name</label>
+        <input id="business" name="business" type="text" placeholder="e.g., Johnson Plumbing" required>
+
+        <label for="quote">Your Testimonial Quote</label>
+        <textarea id="quote" name="quote" placeholder="Tell us what changed after working with GrowthCurb..." required></textarea>
+
+        <label for="rating">Rating</label>
+        <select id="rating" name="rating" required>
+          <option value="" selected disabled>Select a rating</option>
+          <option value="5">⭐⭐⭐⭐⭐ (5)</option>
+          <option value="4">⭐⭐⭐⭐ (4)</option>
+          <option value="3">⭐⭐⭐ (3)</option>
+          <option value="2">⭐⭐ (2)</option>
+          <option value="1">⭐ (1)</option>
+        </select>
+
+        <button type="submit">Submit Testimonial</button>
+      </form>
+
+      <p class="note">This page currently collects entries client-side. Connect form handling endpoint or automation webhook for live submissions.</p>
+    </section>
+  </main>
+
+  <script>
+    document.getElementById('testimonial-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      alert('Thank you! Your testimonial has been recorded.');
+      this.reset();
+    });
+  </script>
+</body>
+</html>
