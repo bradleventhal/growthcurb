@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GrowthCurb Client Onboarding</title>
+  <style>
+    body{margin:0;font-family:Inter,system-ui,Arial,sans-serif;background:#f4f7fb;color:#1f2937}
+    .wrap{max-width:900px;margin:24px auto;padding:0 16px}
+    .card{background:#fff;border:1px solid #dbe2ea;border-radius:12px;padding:16px;box-shadow:0 1px 4px rgba(0,0,0,.04)}
+    h1{margin:0 0 8px}.muted{color:#64748b;margin:0 0 14px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
+    label{display:flex;flex-direction:column;gap:5px;font-size:.88rem}
+    input,textarea,select{padding:9px;border:1px solid #cfd8e3;border-radius:8px;font:inherit}
+    textarea{min-height:90px}
+    .section{margin-top:14px;padding-top:12px;border-top:1px solid #e7edf4}
+    .btn{margin-top:14px;background:#0f3ca5;color:#fff;border:none;border-radius:10px;padding:10px 14px;font-weight:600;cursor:pointer}
+    .note{font-size:.82rem;color:#64748b;margin-top:8px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <form class="card" id="onboardingForm">
+      <h1>GrowthCurb Client Onboarding</h1>
+      <p class="muted">Complete this form so we can launch your site fast.</p>
+
+      <div class="grid">
+        <label>Business Name
+          <input name="businessName" required />
+        </label>
+        <label>Business Address
+          <input name="address" required />
+        </label>
+        <label>Business Phone
+          <input name="phone" required />
+        </label>
+        <label>Website (if any)
+          <input name="website" placeholder="https://..." />
+        </label>
+      </div>
+
+      <div class="section">
+        <label>Business Hours
+          <textarea name="hours" placeholder="Mon-Fri 9am-6pm, Sat 10am-3pm"></textarea>
+        </label>
+      </div>
+
+      <div class="section">
+        <label>Services Offered
+          <textarea name="services" placeholder="List your key services and any pricing notes"></textarea>
+        </label>
+      </div>
+
+      <div class="section">
+        <div class="grid">
+          <label>Logo Upload
+            <input name="logo" type="file" accept="image/*" />
+          </label>
+          <label>Business Photos Upload
+            <input name="photos" type="file" accept="image/*" multiple />
+          </label>
+        </div>
+      </div>
+
+      <div class="section">
+        <h3>Social Media Links</h3>
+        <div class="grid">
+          <label>Facebook
+            <input name="facebook" placeholder="https://facebook.com/..." />
+          </label>
+          <label>Instagram
+            <input name="instagram" placeholder="https://instagram.com/..." />
+          </label>
+          <label>LinkedIn
+            <input name="linkedin" placeholder="https://linkedin.com/..." />
+          </label>
+          <label>TikTok
+            <input name="tiktok" placeholder="https://tiktok.com/..." />
+          </label>
+        </div>
+      </div>
+
+      <div class="section">
+        <h3>Brand Colors</h3>
+        <div class="grid">
+          <label>Primary Color
+            <input name="primaryColor" type="color" value="#0f3ca5" />
+          </label>
+          <label>Secondary Color
+            <input name="secondaryColor" type="color" value="#10b981" />
+          </label>
+          <label>Accent Color
+            <input name="accentColor" type="color" value="#f59e0b" />
+          </label>
+        </div>
+      </div>
+
+      <button class="btn" type="submit">Submit Onboarding</button>
+      <p class="note">This static form is for collection UI/wireflow; backend submission can be connected later.</p>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('onboardingForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Thanks! Your onboarding details have been captured for review.');
+    });
+  </script>
+</body>
+</html>
